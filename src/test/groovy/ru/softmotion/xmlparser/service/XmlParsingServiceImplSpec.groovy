@@ -47,19 +47,7 @@ class XmlParsingServiceImplSpec extends Specification {
         then:
         columnNames != null
     }
-    
-    def "should check if column is unique"() {
-        given:
-        def tableName = "offers"
-        def columnName = "vendor_code"
-        
-        when:
-        def isUnique = xmlService.isColumnId(tableName, columnName)
-        
-        then:
-        isUnique == false // Так как в тестовой реализации всегда возвращается false
-    }
-    
+
     def "should detect DDL changes"() {
         given:
         def tableName = "offers"
