@@ -1,5 +1,6 @@
 package ru.softmotion.xmlparser.service
 
+import ru.softmotion.xmlparser.service.xml.XmlParsingServiceImpl
 import spock.lang.Specification
 import groovy.xml.XmlSlurper
 

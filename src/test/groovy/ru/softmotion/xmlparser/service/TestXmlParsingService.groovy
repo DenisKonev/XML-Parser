@@ -1,7 +1,8 @@
 package ru.softmotion.xmlparser.service
 
-import groovy.xml.XmlSlurper
+
 import groovy.xml.slurpersupport.GPathResult
+import ru.softmotion.xmlparser.service.xml.XmlParsingServiceImpl
 
 /**
  * Test helper class to access protected methods in XmlParsingServiceImpl

@@ -2,7 +2,7 @@ package ru.softmotion.xmlparser.console
 
 import groovy.util.logging.Slf4j
 import org.springframework.stereotype.Component
-import ru.softmotion.xmlparser.service.XmlParsingService
+import ru.softmotion.xmlparser.service.xml.XmlParsingService
 
 /**
  * Обработчик консольных команд.

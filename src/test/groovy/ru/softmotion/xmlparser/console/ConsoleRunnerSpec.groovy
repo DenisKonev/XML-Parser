@@ -1,8 +1,7 @@
 package ru.softmotion.xmlparser.console
 
 import spock.lang.Specification
-import ru.softmotion.xmlparser.service.XmlParsingService
-import spock.mock.DetachedMockFactory
+import ru.softmotion.xmlparser.service.xml.XmlParsingService
 
 /**
  * Tests for ConsoleRunner functionality
