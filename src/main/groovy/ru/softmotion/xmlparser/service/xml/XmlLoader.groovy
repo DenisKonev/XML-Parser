@@ -3,6 +3,7 @@ package ru.softmotion.xmlparser.service.xml
 import groovy.util.logging.Slf4j
 import groovy.xml.XmlSlurper
 import groovy.xml.slurpersupport.GPathResult
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.xml.sax.EntityResolver
 import org.xml.sax.InputSource
@@ -19,16 +20,17 @@ import javax.xml.parsers.SAXParserFactory
 @Component
 class XmlLoader {
 
-    private static final String DEFAULT_XML_URL = "https://expro.ru/bitrix/catalog_export/export_Sai.xml"
     private final String sourceUrl
     private volatile GPathResult root
 
-    XmlLoader() {
-        this(DEFAULT_XML_URL)
-    }
-
-    XmlLoader(String sourceUrl) {
+    /**
+     * @param sourceUrl URL XML-источника, задаётся через application.properties
+     */
+    XmlLoader(
+            @Value('${xml.loader.source-url}') String sourceUrl
+    ) {
         this.sourceUrl = sourceUrl
+        log.info("XmlLoader initialized with sourceUrl={}", sourceUrl)
     }
 
     /**
