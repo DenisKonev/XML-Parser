@@ -71,6 +71,8 @@ Select an option:
     private boolean execute(ConsoleCommand command) {
         log.info("Executing command: {}", command)
 
+        boolean continueRunning = true
+
         try {
             switch (command) {
                 case ConsoleCommand.LIST_TABLES -> listTables()
@@ -82,6 +84,7 @@ Select an option:
                 case ConsoleCommand.DDL_CHANGES -> ddlChanges()
                 case ConsoleCommand.EXIT -> {
                     println("Exiting...")
+                    continueRunning = false
                 }
             }
         } catch (Exception e) {
@@ -89,7 +92,7 @@ Select an option:
             println("Operation failed: ${e.message}")
         }
 
-        true
+        return continueRunning
     }
 
     private void listTables() {
