@@ -28,12 +28,10 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("org.spockframework:spock-core:2.3-groovy-4.0") {
-        exclude(group = "org.codehaus.groovy")
-    }
-    testImplementation("org.spockframework:spock-spring:2.3-groovy-4.0") {
-        exclude(group = "org.codehaus.groovy")
-    }
+    testImplementation("org.spockframework:spock-core:2.3-groovy-4.0")
+    testImplementation("org.spockframework:spock-spring:2.3-groovy-4.0")
+    testImplementation("org.junit.platform:junit-platform-launcher")
+    testImplementation("com.h2database:h2")
 }
 
 tasks.withType<Test> {
